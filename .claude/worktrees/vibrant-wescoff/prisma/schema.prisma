@@ -1,0 +1,357 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum ExchangeStatus {
+  PENDING
+  PROCESSING
+  COMPLETED
+  FAILED
+}
+
+enum VestingStatus {
+  LOCKED
+  UNLOCKED
+  FULLY_WITHDRAWN
+}
+
+enum WithdrawalStatus {
+  PENDING
+  PROCESSING
+  AWAITING_SIGNATURES
+  SUBMITTED
+  COMPLETED
+  FAILED
+}
+
+enum LedgerReason {
+  DISCORD_REWARD
+  EXCHANGE_DEBIT
+  ADMIN_CREDIT
+  ADMIN_DEBIT
+  REFUND
+}
+
+model User {
+  id                          String           @id @default(cuid())
+  walletAddress               String           @unique
+  discordId                   String?          @unique
+  discordUsername             String?
+  nutshellBalance             Int              @default(0)
+  isActive                    Boolean          @default(true)
+  hasRequiredCollectionAccess Boolean          @default(false)
+  requiredCollectionMint      String?
+  requiredCollectionCheckedAt DateTime?
+  createdAt                   DateTime         @default(now())
+  updatedAt                   DateTime         @updatedAt
+  lastSeenAt                  DateTime         @default(now())
+
+  ledgerEntries               NutshellLedger[]
+  exchanges                   TokenExchange[]
+
+  @@index([walletAddress])
+  @@index([discordId])
+  @@index([hasRequiredCollectionAccess])
+}
+
+model NutshellLedger {
+  id         String         @id @default(cuid())
+  userId     String
+  delta      Int
+  reason     LedgerReason
+  note       String?
+  exchangeId String?
+  createdBy  String
+  createdAt  DateTime       @default(now())
+
+  user       User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  exchange   TokenExchange? @relation(fields: [exchangeId], references: [id], onDelete: SetNull)
+
+  @@index([userId, createdAt])
+  @@index([exchangeId])
+}
+
+model TokenExchange {
+  id                String           @id @default(cuid())
+  userId            String
+  nutshellAmount    Int
+  tokenAmount       BigInt
+  exchangeRate      Decimal          @db.Decimal(18, 8)
+  status            ExchangeStatus   @default(PENDING)
+  solanaTxSignature String?
+  solanaConfirmedAt DateTime?
+  jobId             String?
+  failureReason     String?
+  createdAt         DateTime         @default(now())
+  updatedAt         DateTime         @updatedAt
+
+  user              User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  vestingPosition   VestingPosition?
+  ledgerEntries     NutshellLedger[]
+
+  @@index([userId, createdAt])
+  @@index([status])
+}
+
+model VestingPosition {
+  id                               String                                 @id @default(cuid())
+  exchangeId                       String                                 @unique
+  walletAddress                    String
+  totalAmount                      BigInt
+  withdrawnAmount                  BigInt                                 @default(0)
+  lockedAt                         DateTime                               @default(now())
+  unlockAt                         DateTime
+  status                           VestingStatus                          @default(LOCKED)
+  pdaAddress                       String?
+  vestingProvider                  String?
+  streamflowLifecycleStatus        String?
+  vestingReference                 String?                                @unique
+  streamflowClientCorrelationId    String?                                @unique
+  streamflowExpectedVestingKind    String?
+  streamflowExpectedRecipientWalletAddress String?
+  streamflowExpectedMintAddress    String?
+  streamflowExpectedAmountAtomic   BigInt?
+  streamflowExpectedStartAt        DateTime?
+  streamflowExpectedEndAt          DateTime?
+  streamflowScheduleId             String?                                @unique
+  streamflowTreasuryAddress        String?
+  streamflowEscrowAddress          String?
+  streamflowBeneficiaryAddress     String?
+  streamflowMintAddress            String?
+  streamflowCreationTxSignature    String?                                @unique
+  streamflowPreparedAt             DateTime?
+  streamflowScheduleCreatedAt      DateTime?
+  streamflowConfirmedAt            DateTime?
+  streamflowLastReconciledAt       DateTime?
+  streamflowNextReconcileAt        DateTime?
+  streamflowReconcileAttemptCount  Int                                    @default(0)
+  streamflowObservedScheduleState  String?
+  streamflowObservedCreationTxSignature String?
+  streamflowReconciliationFailureReason String?
+  streamflowManualReviewRequired   Boolean                                @default(false)
+  streamflowManualReviewReason     String?
+  createdAt                        DateTime                               @default(now())
+  updatedAt                        DateTime                               @updatedAt
+
+  exchange                         TokenExchange                          @relation(fields: [exchangeId], references: [id], onDelete: Cascade)
+  withdrawals                      Withdrawal[]
+  streamflowReconciliationAttempts VestingStreamflowReconciliationAttempt[]
+
+  @@index([walletAddress, status])
+  @@index([unlockAt])
+  @@index([vestingProvider, streamflowLifecycleStatus])
+  @@index([streamflowNextReconcileAt, streamflowManualReviewRequired])
+  @@index([streamflowManualReviewRequired, status])
+}
+
+model Withdrawal {
+  id                          String                                @id @default(cuid())
+  vestingPositionId           String
+  grossAmount                 BigInt
+  feeAmount                   BigInt
+  netAmount                   BigInt
+  feePercent                  Decimal                               @db.Decimal(5, 2)
+  daysAfterUnlock             Int
+  status                      WithdrawalStatus                      @default(PENDING)
+  payoutReference             String?                               @unique
+  multisigProvider            String?
+  multisigAccountAddress      String?
+  multisigProposalId          String?                               @unique
+  multisigProposalStatus      String?
+  preparedInstructionHash     String?
+  preparedAt                  DateTime?
+  submittedTxSignature        String?                               @unique
+  submittedAt                 DateTime?
+  confirmedAt                 DateTime?
+  cancelledAt                 DateTime?
+  lastReconciledAt            DateTime?
+  recoveryLockId              String?
+  recoveryLockedAt            DateTime?
+  squadsVaultIndex            Int?
+  squadsTransactionIndex      String?
+  squadsTransactionPda        String?
+  squadsProposalPda           String?
+  executionDetectedAt         DateTime?
+  executionDetectionSource    String?
+  nextReconcileAt             DateTime?
+  reconcileAttemptCount       Int                                   @default(0)
+  lastSignatureSearchAt       DateTime?
+  signatureSearchAttemptCount Int                                   @default(0)
+  lastObservedProposalState   String?
+  lastObservedExecutionState  String?
+  reconciliationFailureReason String?
+  manualReviewRequired        Boolean                               @default(false)
+  manualReviewReason          String?
+  solanaTxSignature           String?
+  solanaTxBlockhash           String?
+  solanaTxLastValidBlockHeight BigInt?
+  solanaConfirmedAt           DateTime?
+  jobId                       String?
+  failureReason               String?
+  createdAt                   DateTime                              @default(now())
+  updatedAt                   DateTime                              @updatedAt
+
+  vestingPosition             VestingPosition                       @relation(fields: [vestingPositionId], references: [id], onDelete: Cascade)
+  transitionAudits            WithdrawalTransitionAudit[]
+  payoutAttempts              WithdrawalPayoutAttempt[]
+  payoutEvents                WithdrawalPayoutEvent[]
+  squadsReconciliationAttempts WithdrawalSquadsReconciliationAttempt[]
+
+  @@index([vestingPositionId])
+  @@index([status])
+  @@index([multisigProposalStatus])
+  @@index([lastReconciledAt])
+  @@index([multisigProvider, squadsTransactionIndex])
+  @@index([multisigProvider, squadsProposalPda])
+  @@index([multisigProvider, nextReconcileAt])
+  @@index([manualReviewRequired, status])
+}
+
+model WithdrawalTransitionAudit {
+  id           String           @id @default(cuid())
+  withdrawalId String
+  triggeredBy  String
+  fromStatus   WithdrawalStatus
+  toStatus     WithdrawalStatus
+  note         String?
+  createdAt    DateTime         @default(now())
+
+  withdrawal   Withdrawal       @relation(fields: [withdrawalId], references: [id], onDelete: Cascade)
+
+  @@index([withdrawalId, createdAt])
+  @@index([createdAt])
+}
+
+model WithdrawalPayoutAttempt {
+  id                String      @id @default(cuid())
+  withdrawalId      String
+  actor             String
+  jobId             String?
+  attemptNumber     Int?
+  eventType         String
+  message           String?
+  solanaTxSignature String?
+  createdAt         DateTime    @default(now())
+
+  withdrawal        Withdrawal  @relation(fields: [withdrawalId], references: [id], onDelete: Cascade)
+
+  @@index([withdrawalId, createdAt])
+  @@index([eventType, createdAt])
+}
+
+model WithdrawalPayoutEvent {
+  id           String      @id @default(cuid())
+  withdrawalId String
+  eventType    String
+  triggeredBy  String
+  proposalId   String?
+  txSignature  String?
+  detailsJson  String?
+  createdAt    DateTime    @default(now())
+
+  withdrawal   Withdrawal  @relation(fields: [withdrawalId], references: [id], onDelete: Cascade)
+
+  @@index([withdrawalId, createdAt])
+  @@index([eventType, createdAt])
+}
+
+model WithdrawalSquadsReconciliationAttempt {
+  id             String     @id @default(cuid())
+  withdrawalId   String
+  attemptType    String
+  result         String
+  proposalState  String?
+  executionState String?
+  txSignature    String?
+  matchedBy      String?
+  errorMessage   String?
+  detailsJson    String?
+  createdAt      DateTime   @default(now())
+
+  withdrawal     Withdrawal @relation(fields: [withdrawalId], references: [id], onDelete: Cascade)
+
+  @@index([withdrawalId, createdAt])
+  @@index([attemptType, createdAt])
+  @@index([result, createdAt])
+}
+
+model WithdrawalWorkerStatus {
+  actor               String    @id
+  currentMode         String?
+  isRunning           Boolean   @default(false)
+  lastHeartbeatAt     DateTime?
+  lastRunStartedAt    DateTime?
+  lastRunCompletedAt  DateTime?
+  lastSummary         String?
+  lastError           String?
+  updatedAt           DateTime  @updatedAt
+
+  @@index([lastHeartbeatAt])
+}
+
+model VestingStreamflowReconciliationAttempt {
+  id                 String          @id @default(cuid())
+  vestingPositionId  String
+  attemptType        String
+  result             String
+  observedScheduleId String?
+  observedTxSignature String?
+  observedState      String?
+  matchedBy          String?
+  errorMessage       String?
+  detailsJson        String?
+  createdAt          DateTime        @default(now())
+
+  vestingPosition    VestingPosition @relation(fields: [vestingPositionId], references: [id], onDelete: Cascade)
+
+  @@index([vestingPositionId, createdAt])
+  @@index([attemptType, createdAt])
+  @@index([result, createdAt])
+}
+
+model RateLimitBucket {
+  key              String    @id
+  count            Int       @default(0)
+  windowStartedAt  DateTime
+  expiresAt        DateTime
+  updatedAt        DateTime  @updatedAt
+
+  @@index([expiresAt])
+}
+
+model SystemConfigAudit {
+  id        String    @id @default(cuid())
+  key       String
+  oldValue  String?
+  newValue  String?
+  changedBy String
+  reason    String?
+  createdAt DateTime  @default(now())
+
+  @@index([key, createdAt])
+  @@index([createdAt])
+}
+
+model FeeSchedule {
+  id              String    @id @default(cuid())
+  daysAfterUnlock Int       @unique
+  feePercent      Decimal   @db.Decimal(5, 2)
+  label           String?
+  isActive        Boolean   @default(true)
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  @@index([daysAfterUnlock])
+}
+
+model SystemConfig {
+  key         String    @id
+  value       String
+  description String?
+  updatedAt   DateTime  @updatedAt
+  updatedBy   String?
+}

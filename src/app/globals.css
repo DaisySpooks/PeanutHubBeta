@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+:root {
+  --background: #05070a;
+  --foreground: #f2eee6;
+  --page-bg: #05070a;
+  --text-primary: #f2eee6;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(120, 88, 38, 0.22), transparent 24%),
+    linear-gradient(180deg, #090c10 0%, #05070a 100%);
+  color: var(--foreground);
+  font-family: var(--font-sans), sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: rgba(255, 219, 154, 0.28);
+  color: #fff7e7;
+}
+
+.firefly {
+  position: absolute;
+  display: block;
+  border-radius: 9999px;
+  background: rgba(255, 238, 192, 0.98);
+  box-shadow:
+    0 0 12px rgba(255, 236, 190, 0.68),
+    0 0 24px rgba(255, 201, 98, 0.42),
+    0 0 38px rgba(255, 168, 68, 0.2);
+  opacity: 0;
+  animation:
+    fireflyDrift ease-in-out infinite,
+    fireflyPulse var(--pulse-duration) ease-in-out infinite;
+  animation-delay: var(--pulse-delay), var(--pulse-delay);
+}
+
+.firefly::before {
+  content: "";
+  position: absolute;
+  inset: -75%;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(255, 218, 128, 0.6), transparent 70%);
+  opacity: 0.9;
+}
+
+@keyframes fireflyDrift {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.28;
+  }
+
+  20% {
+    transform: translate3d(calc(var(--drift-x) * 0.45), calc(var(--drift-y) * 0.3), 0);
+    opacity: 0.46;
+  }
+
+  42% {
+    transform: translate3d(calc(var(--sway-x) * 1.2), calc(var(--drift-y) * 0.62), 0);
+    opacity: 0.34;
+  }
+
+  68% {
+    transform: translate3d(calc(var(--drift-x) * 0.9), calc(var(--drift-y) * 0.88), 0);
+    opacity: 0.54;
+  }
+
+  84% {
+    transform: translate3d(calc(var(--drift-x) * 0.58), calc(var(--drift-y) * 1.02), 0);
+    opacity: 0.4;
+  }
+
+  100% {
+    transform: translate3d(var(--drift-x), var(--drift-y), 0);
+    opacity: 0.26;
+  }
+}
+
+@keyframes fireflyPulse {
+  0%,
+  100% {
+    filter: brightness(0.92);
+    box-shadow:
+      0 0 10px rgba(255, 236, 190, 0.58),
+      0 0 22px rgba(255, 201, 98, 0.34),
+      0 0 34px rgba(255, 168, 68, 0.14);
+  }
+
+  50% {
+    filter: brightness(1.42);
+    box-shadow:
+      0 0 14px rgba(255, 241, 198, 0.78),
+      0 0 28px rgba(255, 208, 108, 0.48),
+      0 0 42px rgba(255, 174, 74, 0.22);
+  }
+}
