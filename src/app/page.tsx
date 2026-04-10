@@ -104,7 +104,7 @@ export default function Home() {
                 </a>
               </div>
 
-              <div className="absolute bottom-[1rem] left-[46%] z-20 w-[40%] max-w-[15.75rem] -translate-x-1/2 sm:bottom-[1.75rem] sm:max-w-[19.5rem] lg:bottom-[2rem] lg:max-w-[21.75rem]">
+              <div className="absolute bottom-[1rem] left-[46%] z-20 w-[43%] max-w-[16.75rem] -translate-x-1/2 sm:bottom-[1.75rem] sm:max-w-[20.5rem] lg:bottom-[2rem] lg:max-w-[23rem]">
                 <div className="relative aspect-[4/5]">
                   <div className="absolute bottom-[2%] left-1/2 h-[13%] w-[56%] -translate-x-1/2 rounded-[50%] bg-black/56 blur-md" />
                   <div className="absolute bottom-[1%] left-1/2 h-[7%] w-[34%] -translate-x-1/2 rounded-[50%] bg-black/34 blur-sm" />
@@ -114,11 +114,11 @@ export default function Home() {
                   <div className="absolute bottom-[1.4%] left-[43%] h-[2.8%] w-[12%] -translate-x-1/2 rounded-[50%] bg-black/34 blur-[4px]" />
                   <div className="absolute bottom-[1.4%] left-[57%] h-[2.8%] w-[12%] -translate-x-1/2 rounded-[50%] bg-black/34 blur-[4px]" />
                   <Image
-                    src="/images/character.png"
+                    src="/images/character-bananas-test.png"
                     alt="Peanut Hub character"
                     fill
                     sizes="(min-width: 1024px) 460px, 52vw"
-                    className="object-contain object-bottom brightness-[0.86] contrast-[0.95] saturate-[0.9] drop-shadow-[0_12px_16px_rgba(0,0,0,0.28)]"
+                    className="object-contain object-bottom brightness-[0.88] contrast-[0.96] saturate-[0.92] drop-shadow-[0_10px_14px_rgba(0,0,0,0.22)] drop-shadow-[0_16px_24px_rgba(0,0,0,0.3)]"
                   />
                   <div className="pointer-events-none absolute bottom-[3%] left-1/2 h-[30%] w-[62%] -translate-x-1/2 rounded-[50%] bg-[linear-gradient(180deg,rgba(8,8,10,0),rgba(8,8,10,0.08)_30%,rgba(8,8,10,0.22)_68%,rgba(8,8,10,0.28))] blur-md" />
                   <div className="pointer-events-none absolute bottom-[0.5%] left-1/2 h-[10%] w-[54%] -translate-x-1/2 rounded-[50%] bg-[linear-gradient(180deg,rgba(14,10,6,0),rgba(14,10,6,0.1)_36%,rgba(14,10,6,0.18)_72%,rgba(14,10,6,0.22))] blur-sm" />
