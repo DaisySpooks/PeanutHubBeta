@@ -57,6 +57,25 @@ export default function Home() {
 
         <div className="relative mx-auto flex min-h-screen w-full max-w-7xl flex-col px-6 pb-8 pt-8 sm:px-10 lg:px-12">
           <div className="flex flex-col items-center text-center lg:hidden">
+            <div className="absolute right-6 top-5 z-30 flex items-center gap-2 sm:right-10 sm:top-7">
+              <a
+                href="https://x.com/OgPeanut_solana"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-8 cursor-pointer items-center justify-center rounded-full border border-amber-100/14 bg-black/22 px-3 text-[11px] font-medium tracking-[0.04em] text-[#ead8b7]/78 transition-colors duration-300 hover:bg-black/30 hover:text-[#f5cd8c] [font-family:Georgia,'Times_New_Roman',serif]"
+              >
+                X / Twitter
+              </a>
+              <a
+                href="https://discord.com/invite/UPR3FZBCzn"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-8 cursor-pointer items-center justify-center rounded-full border border-amber-100/14 bg-black/22 px-3 text-[11px] font-medium tracking-[0.04em] text-[#ead8b7]/78 transition-colors duration-300 hover:bg-black/30 hover:text-[#f5cd8c] [font-family:Georgia,'Times_New_Roman',serif]"
+              >
+                Discord
+              </a>
+            </div>
+
             <div className="relative h-18 w-32 sm:h-20 sm:w-36">
               <Image
                 src="/images/emblem-v2.png"
@@ -147,29 +166,10 @@ export default function Home() {
               href="https://www.launchmynft.io/collections/CmTidAhU1QEutyZPFWcqwBQ44ScJhNAGH2J9hm5zonP6/aW6JZwq0ZErg7BGlXbKe"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-3 inline-flex min-h-10 items-center justify-center rounded-2xl border border-amber-200/28 bg-[linear-gradient(180deg,rgba(109,58,27,0.74),rgba(61,31,14,0.92))] px-6 text-sm font-semibold uppercase tracking-[0.18em] text-[#f8dfb6] shadow-[0_12px_24px_rgba(0,0,0,0.36)] transition-transform duration-300 hover:-translate-y-0.5 [font-family:Georgia,'Times_New_Roman',serif]"
+              className="mt-5 inline-flex min-h-9 items-center justify-center rounded-2xl border border-amber-200/28 bg-[linear-gradient(180deg,rgba(109,58,27,0.74),rgba(61,31,14,0.92))] px-5 text-[13px] font-semibold uppercase tracking-[0.16em] text-[#f8dfb6] shadow-[0_12px_24px_rgba(0,0,0,0.36)] transition-transform duration-300 hover:-translate-y-0.5 [font-family:Georgia,'Times_New_Roman',serif]"
             >
               Mint your PP
             </a>
-
-            <div className="mt-2 flex w-full max-w-sm flex-col gap-2 sm:flex-row sm:justify-center">
-              <a
-                href="https://x.com/OgPeanut_solana"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex min-h-9 cursor-pointer items-center justify-center rounded-xl border border-amber-100/18 bg-black/18 px-4 text-[13px] font-medium tracking-[0.06em] text-[#ead8b7]/86 transition-colors duration-300 hover:bg-black/28 hover:text-[#f5cd8c] [font-family:Georgia,'Times_New_Roman',serif]"
-              >
-                X / Twitter
-              </a>
-              <a
-                href="https://discord.com/invite/UPR3FZBCzn"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex min-h-9 cursor-pointer items-center justify-center rounded-xl border border-amber-100/18 bg-black/18 px-4 text-[13px] font-medium tracking-[0.06em] text-[#ead8b7]/86 transition-colors duration-300 hover:bg-black/28 hover:text-[#f5cd8c] [font-family:Georgia,'Times_New_Roman',serif]"
-              >
-                Discord
-              </a>
-            </div>
 
             <div
               id="welcome"
