@@ -80,7 +80,7 @@ export default function Home() {
             </div>
 
             <div className="relative mt-2 h-[22.5rem] w-full max-w-sm sm:h-[25rem] sm:max-w-md">
-              <div className="absolute bottom-[2.2rem] left-[0%] z-10 w-[34%] max-w-[7.6rem] sm:left-[2%] sm:max-w-[9rem]">
+              <div className="absolute bottom-[2.35rem] left-[0%] z-10 w-[34%] max-w-[7.6rem] sm:left-[2%] sm:max-w-[9rem]">
                 <a
                   href="https://plz.veraity.com/"
                   target="_blank"
@@ -100,7 +100,7 @@ export default function Home() {
                 </a>
               </div>
 
-              <div className="absolute bottom-[2.2rem] left-1/2 z-20 w-[54%] max-w-[12.25rem] -translate-x-1/2 sm:max-w-[14.25rem]">
+              <div className="absolute bottom-[2.35rem] left-1/2 z-20 w-[54%] max-w-[12.25rem] -translate-x-1/2 sm:max-w-[14.25rem]">
                 <div className="relative aspect-[4/5]">
                   <div className="absolute bottom-[2%] left-1/2 h-[13%] w-[56%] -translate-x-1/2 rounded-[50%] bg-black/56 blur-md" />
                   <div className="absolute bottom-[1%] left-1/2 h-[7%] w-[34%] -translate-x-1/2 rounded-[50%] bg-black/34 blur-sm" />
@@ -121,7 +121,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="absolute bottom-[2.25rem] right-[5%] z-10 w-[12%] max-w-[3.1rem] sm:right-[8%] sm:max-w-[3.6rem]">
+              <div className="absolute bottom-[2.35rem] right-[5%] z-10 w-[12%] max-w-[3.1rem] sm:right-[8%] sm:max-w-[3.6rem]">
                 <a
                   href="https://ogpeanut-radio.com/"
                   target="_blank"
