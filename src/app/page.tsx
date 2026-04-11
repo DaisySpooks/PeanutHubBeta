@@ -100,13 +100,12 @@ export default function Home() {
                 </a>
               </div>
 
-              <div className="absolute bottom-[2.35rem] left-1/2 z-20 w-[54%] max-w-[12.25rem] -translate-x-1/2 sm:max-w-[14.25rem]">
+              <div className="absolute bottom-[2.15rem] left-1/2 z-20 w-[54%] max-w-[12.25rem] -translate-x-1/2 sm:bottom-[2.3rem] sm:max-w-[14.25rem]">
                 <div className="relative aspect-[4/5]">
-                  <div className="absolute bottom-[2%] left-1/2 h-[13%] w-[56%] -translate-x-1/2 rounded-[50%] bg-black/56 blur-md" />
-                  <div className="absolute bottom-[1%] left-1/2 h-[7%] w-[34%] -translate-x-1/2 rounded-[50%] bg-black/34 blur-sm" />
-                  <div className="absolute bottom-[6%] left-1/2 h-[24%] w-[66%] -translate-x-1/2 rounded-[50%] bg-[radial-gradient(ellipse_at_center,rgba(10,10,12,0.34),rgba(10,10,12,0.16)_42%,transparent_76%)] blur-lg" />
-                  <div className="absolute bottom-[10%] left-1/2 h-[34%] w-[74%] -translate-x-1/2 rounded-[50%] bg-[radial-gradient(ellipse_at_center,rgba(12,12,14,0.18),rgba(12,12,14,0.08)_48%,transparent_78%)] blur-xl" />
-                  <div className="absolute bottom-[0.75%] left-1/2 h-[4.5%] w-[38%] -translate-x-1/2 rounded-[50%] bg-black/42 blur-[6px]" />
+                  <div className="absolute bottom-[0.8%] left-1/2 h-[5.5%] w-[42%] -translate-x-1/2 rounded-[50%] bg-black/52 blur-[5px]" />
+                  <div className="absolute bottom-[1.8%] left-1/2 h-[10%] w-[56%] -translate-x-1/2 rounded-[50%] bg-black/48 blur-md" />
+                  <div className="absolute bottom-[3%] left-1/2 h-[16%] w-[70%] -translate-x-1/2 rounded-[50%] bg-[radial-gradient(ellipse_at_center,rgba(8,8,10,0.42),rgba(8,8,10,0.2)_45%,transparent_78%)] blur-lg" />
+                  <div className="absolute bottom-[4%] left-1/2 h-[24%] w-[88%] -translate-x-1/2 rounded-[50%] bg-[radial-gradient(ellipse_at_center,rgba(10,10,12,0.24),rgba(10,10,12,0.1)_48%,transparent_80%)] blur-xl" />
                   <div className="absolute bottom-[1.4%] left-[43%] h-[2.8%] w-[12%] -translate-x-1/2 rounded-[50%] bg-black/34 blur-[4px]" />
                   <div className="absolute bottom-[1.4%] left-[57%] h-[2.8%] w-[12%] -translate-x-1/2 rounded-[50%] bg-black/34 blur-[4px]" />
                   <Image
@@ -116,8 +115,8 @@ export default function Home() {
                     sizes="(min-width: 640px) 16rem, 62vw"
                     className="object-contain object-bottom brightness-[0.88] contrast-[0.96] saturate-[0.92] drop-shadow-[0_10px_14px_rgba(0,0,0,0.22)] drop-shadow-[0_16px_24px_rgba(0,0,0,0.3)]"
                   />
-                  <div className="pointer-events-none absolute bottom-[3%] left-1/2 h-[30%] w-[62%] -translate-x-1/2 rounded-[50%] bg-[linear-gradient(180deg,rgba(8,8,10,0),rgba(8,8,10,0.08)_30%,rgba(8,8,10,0.22)_68%,rgba(8,8,10,0.28))] blur-md" />
-                  <div className="pointer-events-none absolute bottom-[0.5%] left-1/2 h-[10%] w-[54%] -translate-x-1/2 rounded-[50%] bg-[linear-gradient(180deg,rgba(14,10,6,0),rgba(14,10,6,0.1)_36%,rgba(14,10,6,0.18)_72%,rgba(14,10,6,0.22))] blur-sm" />
+                  <div className="pointer-events-none absolute bottom-[2%] left-1/2 h-[18%] w-[68%] -translate-x-1/2 rounded-[50%] bg-[linear-gradient(180deg,rgba(8,8,10,0),rgba(8,8,10,0.12)_34%,rgba(8,8,10,0.26)_72%,rgba(8,8,10,0.3))] blur-md" />
+                  <div className="pointer-events-none absolute bottom-[0.4%] left-1/2 h-[11%] w-[60%] -translate-x-1/2 rounded-[50%] bg-[linear-gradient(180deg,rgba(14,10,6,0),rgba(14,10,6,0.12)_36%,rgba(14,10,6,0.2)_72%,rgba(14,10,6,0.24))] blur-sm" />
                 </div>
               </div>
 
