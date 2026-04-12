@@ -26,7 +26,7 @@ export default function Home() {
             fill
             priority
             sizes="100vw"
-            className="object-cover object-center"
+            className="object-cover object-[50%_center] lg:object-center"
           />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_22%,rgba(255,225,165,0.15),transparent_22%),radial-gradient(circle_at_50%_64%,rgba(255,191,94,0.14),transparent_16%),linear-gradient(180deg,rgba(4,4,6,0.58),rgba(4,4,6,0.2)_22%,rgba(4,4,6,0.36)_48%,rgba(4,4,6,0.86)_78%,rgba(4,4,6,0.97))]" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_32%,rgba(0,0,0,0.56)_88%)]" />
@@ -57,12 +57,12 @@ export default function Home() {
 
         <div className="relative mx-auto flex min-h-screen w-full max-w-7xl flex-col px-6 pb-8 pt-8 sm:px-10 lg:px-12">
           <div className="flex flex-col items-center text-center lg:hidden">
-            <div className="absolute right-6 top-5 z-30 flex items-center gap-2 sm:right-10 sm:top-7">
+            <div className="absolute right-4 top-4 z-30 flex items-center gap-1.5 sm:right-8 sm:top-6">
               <a
                 href="https://x.com/OgPeanut_solana"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-8 cursor-pointer items-center justify-center rounded-full border border-amber-100/14 bg-black/22 px-3 text-[11px] font-medium tracking-[0.04em] text-[#ead8b7]/78 transition-colors duration-300 hover:bg-black/30 hover:text-[#f5cd8c] [font-family:Georgia,'Times_New_Roman',serif]"
+                className="inline-flex min-h-7 cursor-pointer items-center justify-center rounded-full border border-amber-100/12 bg-black/18 px-2.5 text-[10px] font-medium tracking-[0.02em] text-[#ead8b7]/72 transition-colors duration-300 hover:bg-black/26 hover:text-[#f5cd8c] [font-family:Georgia,'Times_New_Roman',serif]"
               >
                 X / Twitter
               </a>
@@ -70,7 +70,7 @@ export default function Home() {
                 href="https://discord.com/invite/UPR3FZBCzn"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-8 cursor-pointer items-center justify-center rounded-full border border-amber-100/14 bg-black/22 px-3 text-[11px] font-medium tracking-[0.04em] text-[#ead8b7]/78 transition-colors duration-300 hover:bg-black/30 hover:text-[#f5cd8c] [font-family:Georgia,'Times_New_Roman',serif]"
+                className="inline-flex min-h-7 cursor-pointer items-center justify-center rounded-full border border-amber-100/12 bg-black/18 px-2.5 text-[10px] font-medium tracking-[0.02em] text-[#ead8b7]/72 transition-colors duration-300 hover:bg-black/26 hover:text-[#f5cd8c] [font-family:Georgia,'Times_New_Roman',serif]"
               >
                 Discord
               </a>
@@ -86,20 +86,20 @@ export default function Home() {
               />
             </div>
 
-            <div className="relative mt-[-1.6rem] w-[114%] max-w-[26rem] sm:mt-[-1.9rem] sm:w-[116%] sm:max-w-[31rem]">
+            <div className="relative mt-[-1.9rem] w-[118%] max-w-[27.5rem] sm:mt-[-2.1rem] sm:w-[118%] sm:max-w-[32rem]">
               <div className="relative mx-auto aspect-[5/2] w-full">
                 <Image
                   src="/images/hero-title-nutaverse.png"
                   alt="OG Peanut, Enter the Nutaverse, Peanut Protocol"
                   fill
-                  sizes="(min-width: 640px) 31rem, 114vw"
+                  sizes="(min-width: 640px) 32rem, 118vw"
                   className="object-contain"
                 />
               </div>
             </div>
 
-            <div className="relative mt-2 h-[22.5rem] w-full max-w-sm sm:h-[25rem] sm:max-w-md">
-              <div className="absolute bottom-[2.35rem] left-[0%] z-10 w-[34%] max-w-[7.6rem] sm:left-[2%] sm:max-w-[9rem]">
+            <div className="relative mt-2 h-[22.75rem] w-full max-w-sm sm:h-[25.25rem] sm:max-w-md">
+              <div className="absolute bottom-[2.25rem] left-[2%] z-10 w-[35%] max-w-[7.9rem] sm:left-[4%] sm:max-w-[9.25rem]">
                 <a
                   href="https://plz.veraity.com/"
                   target="_blank"
@@ -107,7 +107,7 @@ export default function Home() {
                   className="group block cursor-pointer"
                 >
                   <div className="relative aspect-[4/5]">
-                    <div className="absolute bottom-[2.5%] left-1/2 h-[11%] w-[54%] -translate-x-1/2 rounded-[50%] bg-black/42 blur-md" />
+                    <div className="absolute bottom-[2.5%] left-1/2 h-[12%] w-[58%] -translate-x-1/2 rounded-[50%] bg-black/46 blur-md" />
                     <Image
                       src="/images/arcade-peaquilizer.png"
                       alt="Arcade prop"
@@ -119,7 +119,7 @@ export default function Home() {
                 </a>
               </div>
 
-              <div className="absolute bottom-[2.15rem] left-1/2 z-20 w-[54%] max-w-[12.25rem] -translate-x-1/2 sm:bottom-[2.3rem] sm:max-w-[14.25rem]">
+              <div className="absolute bottom-[2.1rem] left-[50%] z-20 w-[54%] max-w-[12.25rem] -translate-x-1/2 sm:bottom-[2.25rem] sm:max-w-[14.25rem]">
                 <div className="relative aspect-[4/5]">
                   <div className="absolute bottom-[0.8%] left-1/2 h-[5.5%] w-[42%] -translate-x-1/2 rounded-[50%] bg-black/52 blur-[5px]" />
                   <div className="absolute bottom-[1.8%] left-1/2 h-[10%] w-[56%] -translate-x-1/2 rounded-[50%] bg-black/48 blur-md" />
@@ -139,7 +139,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="absolute bottom-[2.35rem] right-[5%] z-10 w-[12%] max-w-[3.1rem] sm:right-[8%] sm:max-w-[3.6rem]">
+              <div className="absolute bottom-[2.2rem] right-[6%] z-10 w-[12%] max-w-[3.1rem] sm:right-[9%] sm:max-w-[3.6rem]">
                 <a
                   href="https://ogpeanut-radio.com/"
                   target="_blank"
@@ -159,14 +159,15 @@ export default function Home() {
                 </a>
               </div>
 
-              <div className="absolute bottom-[1.45rem] left-1/2 h-12 w-[88%] max-w-sm -translate-x-1/2 rounded-[50%] bg-[radial-gradient(circle,rgba(255,182,77,0.28),rgba(255,182,77,0.08)_42%,transparent_72%)] blur-2xl" />
+              <div className="absolute bottom-[1.35rem] left-1/2 h-14 w-[92%] max-w-sm -translate-x-1/2 rounded-[50%] bg-[radial-gradient(circle,rgba(255,182,77,0.24),rgba(255,182,77,0.08)_42%,transparent_72%)] blur-2xl" />
+              <div className="absolute bottom-[1.65rem] left-1/2 h-[16%] w-[94%] max-w-sm -translate-x-1/2 rounded-[50%] bg-[radial-gradient(ellipse_at_center,rgba(9,9,10,0.3),rgba(9,9,10,0.12)_46%,transparent_76%)] blur-xl" />
             </div>
 
             <a
               href="https://www.launchmynft.io/collections/CmTidAhU1QEutyZPFWcqwBQ44ScJhNAGH2J9hm5zonP6/aW6JZwq0ZErg7BGlXbKe"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-5 inline-flex min-h-9 items-center justify-center rounded-2xl border border-amber-200/28 bg-[linear-gradient(180deg,rgba(109,58,27,0.74),rgba(61,31,14,0.92))] px-5 text-[13px] font-semibold uppercase tracking-[0.16em] text-[#f8dfb6] shadow-[0_12px_24px_rgba(0,0,0,0.36)] transition-transform duration-300 hover:-translate-y-0.5 [font-family:Georgia,'Times_New_Roman',serif]"
+              className="mt-6 inline-flex min-h-9 items-center justify-center rounded-2xl border border-amber-200/28 bg-[linear-gradient(180deg,rgba(109,58,27,0.74),rgba(61,31,14,0.92))] px-5 text-[12px] font-semibold uppercase tracking-[0.14em] text-[#f8dfb6] shadow-[0_12px_24px_rgba(0,0,0,0.36)] transition-transform duration-300 hover:-translate-y-0.5 [font-family:Georgia,'Times_New_Roman',serif]"
             >
               Mint your PP
             </a>
