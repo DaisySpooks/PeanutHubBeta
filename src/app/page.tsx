@@ -57,49 +57,53 @@ export default function Home() {
 
         <div className="relative mx-auto flex min-h-screen w-full max-w-7xl flex-col px-6 pb-8 pt-4 sm:px-10 sm:pt-6 lg:px-12 lg:pt-8">
           <div className="flex flex-col items-center text-center lg:hidden">
-            <div className="absolute right-4 top-3 z-30 flex items-center gap-1 sm:right-8 sm:top-5">
-              <a
-                href="https://x.com/OgPeanut_solana"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex min-h-6 cursor-pointer items-center justify-center rounded-full border border-amber-100/12 bg-black/18 px-2 text-[9px] font-medium tracking-[0.01em] text-[#ead8b7]/70 transition-colors duration-300 hover:bg-black/26 hover:text-[#f5cd8c] [font-family:Georgia,'Times_New_Roman',serif]"
-              >
-                X / Twitter
-              </a>
-              <a
-                href="https://discord.com/invite/UPR3FZBCzn"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex min-h-6 cursor-pointer items-center justify-center rounded-full border border-amber-100/12 bg-black/18 px-2 text-[9px] font-medium tracking-[0.01em] text-[#ead8b7]/70 transition-colors duration-300 hover:bg-black/26 hover:text-[#f5cd8c] [font-family:Georgia,'Times_New_Roman',serif]"
-              >
-                Discord
-              </a>
-            </div>
-
-            <div className="relative h-18 w-32 sm:h-20 sm:w-36">
-              <Image
-                src="/images/emblem-v2.png"
-                alt="Peanut Hub emblem"
-                fill
-                sizes="144px"
-                className="object-contain drop-shadow-[0_0_18px_rgba(255,181,63,0.22)]"
-              />
-            </div>
-
-            <div className="relative mt-[-2rem] w-[120%] max-w-[28rem] sm:mt-[-2.15rem] sm:w-[119%] sm:max-w-[32rem]">
-              <div className="relative mx-auto aspect-[5/2] w-full">
-                <Image
-                  src="/images/hero-title-nutaverse.png"
-                  alt="OG Peanut, Enter the Nutaverse, Peanut Protocol"
-                  fill
-                  sizes="(min-width: 640px) 32rem, 120vw"
-                  className="object-contain"
-                />
+            <div className="flex w-full justify-end">
+              <div className="flex items-center gap-1 sm:gap-1.5">
+                <a
+                  href="https://x.com/OgPeanut_solana"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-6 cursor-pointer items-center justify-center rounded-full border border-amber-100/12 bg-black/18 px-2 text-[9px] font-medium tracking-[0.01em] text-[#ead8b7]/70 transition-colors duration-300 hover:bg-black/26 hover:text-[#f5cd8c] [font-family:Georgia,'Times_New_Roman',serif]"
+                >
+                  X / Twitter
+                </a>
+                <a
+                  href="https://discord.com/invite/UPR3FZBCzn"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-6 cursor-pointer items-center justify-center rounded-full border border-amber-100/12 bg-black/18 px-2 text-[9px] font-medium tracking-[0.01em] text-[#ead8b7]/70 transition-colors duration-300 hover:bg-black/26 hover:text-[#f5cd8c] [font-family:Georgia,'Times_New_Roman',serif]"
+                >
+                  Discord
+                </a>
               </div>
             </div>
 
-            <div className="relative mt-4 h-[23.25rem] w-full max-w-sm sm:mt-5 sm:h-[25.75rem] sm:max-w-md">
-              <div className="absolute bottom-[1.9rem] left-[8%] z-10 w-[38%] max-w-[8.4rem] sm:left-[8%] sm:max-w-[9.75rem]">
+            <div className="mt-2 flex flex-col items-center">
+              <div className="relative h-18 w-32 sm:h-20 sm:w-36">
+                <Image
+                  src="/images/emblem-v2.png"
+                  alt="Peanut Hub emblem"
+                  fill
+                  sizes="144px"
+                  className="object-contain drop-shadow-[0_0_18px_rgba(255,181,63,0.22)]"
+                />
+              </div>
+
+              <div className="relative mt-[-2rem] w-[120%] max-w-[28rem] sm:mt-[-2.15rem] sm:w-[119%] sm:max-w-[32rem]">
+                <div className="relative mx-auto aspect-[5/2] w-full">
+                  <Image
+                    src="/images/hero-title-nutaverse.png"
+                    alt="OG Peanut, Enter the Nutaverse, Peanut Protocol"
+                    fill
+                    sizes="(min-width: 640px) 32rem, 120vw"
+                    className="object-contain"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div className="relative mt-3 h-[25rem] w-full max-w-sm sm:h-[27.5rem] sm:max-w-md">
+              <div className="absolute bottom-[4.9rem] left-[9%] z-10 w-[40%] max-w-[8.9rem] sm:left-[10%] sm:max-w-[10.2rem]">
                 <a
                   href="https://plz.veraity.com/"
                   target="_blank"
@@ -112,14 +116,14 @@ export default function Home() {
                       src="/images/arcade-peaquilizer.png"
                       alt="Arcade prop"
                       fill
-                      sizes="120px"
+                      sizes="128px"
                       className="object-contain object-bottom opacity-[0.95] drop-shadow-[0_14px_20px_rgba(0,0,0,0.42)] transition-transform duration-300 group-hover:scale-[1.03]"
                     />
                   </div>
                 </a>
               </div>
 
-              <div className="absolute bottom-[1.7rem] left-[50%] z-20 w-[49%] max-w-[11.25rem] -translate-x-1/2 sm:bottom-[1.95rem] sm:max-w-[13.25rem]">
+              <div className="absolute bottom-[4.35rem] left-1/2 z-20 w-[47%] max-w-[10.9rem] -translate-x-1/2 sm:bottom-[4.5rem] sm:max-w-[12.5rem]">
                 <div className="relative aspect-[4/5]">
                   <div className="absolute bottom-[0.8%] left-1/2 h-[5.5%] w-[42%] -translate-x-1/2 rounded-[50%] bg-black/52 blur-[5px]" />
                   <div className="absolute bottom-[1.8%] left-1/2 h-[10%] w-[56%] -translate-x-1/2 rounded-[50%] bg-black/48 blur-md" />
@@ -131,7 +135,7 @@ export default function Home() {
                     src="/images/character-bananas-test.png"
                     alt="Peanut Hub character"
                     fill
-                    sizes="(min-width: 640px) 16rem, 62vw"
+                    sizes="(min-width: 640px) 13rem, 56vw"
                     className="object-contain object-bottom brightness-[0.88] contrast-[0.96] saturate-[0.92] drop-shadow-[0_10px_14px_rgba(0,0,0,0.22)] drop-shadow-[0_16px_24px_rgba(0,0,0,0.3)]"
                   />
                   <div className="pointer-events-none absolute bottom-[2%] left-1/2 h-[18%] w-[68%] -translate-x-1/2 rounded-[50%] bg-[linear-gradient(180deg,rgba(8,8,10,0),rgba(8,8,10,0.12)_34%,rgba(8,8,10,0.26)_72%,rgba(8,8,10,0.3))] blur-md" />
@@ -139,7 +143,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="absolute bottom-[1.9rem] right-[10%] z-10 w-[12%] max-w-[3.1rem] sm:right-[11%] sm:max-w-[3.6rem]">
+              <div className="absolute bottom-[5rem] right-[12%] z-10 w-[11%] max-w-[2.9rem] sm:right-[12%] sm:max-w-[3.4rem]">
                 <a
                   href="https://ogpeanut-radio.com/"
                   target="_blank"
@@ -152,29 +156,29 @@ export default function Home() {
                       src="/images/microphone-live-on-air.png"
                       alt="Microphone prop"
                       fill
-                      sizes="56px"
+                      sizes="52px"
                       className="object-contain object-bottom opacity-[0.9] drop-shadow-[0_12px_18px_rgba(0,0,0,0.34)] transition-transform duration-300 group-hover:scale-[1.03]"
                     />
                   </div>
                 </a>
               </div>
 
-              <div className="absolute bottom-[1.1rem] left-1/2 h-14 w-[92%] max-w-sm -translate-x-1/2 rounded-[50%] bg-[radial-gradient(circle,rgba(255,182,77,0.24),rgba(255,182,77,0.08)_42%,transparent_72%)] blur-2xl" />
-              <div className="absolute bottom-[1.4rem] left-1/2 h-[18%] w-[96%] max-w-sm -translate-x-1/2 rounded-[50%] bg-[radial-gradient(ellipse_at_center,rgba(9,9,10,0.34),rgba(9,9,10,0.14)_46%,transparent_76%)] blur-xl" />
-            </div>
+              <div className="absolute bottom-[3rem] left-1/2 h-16 w-[94%] max-w-sm -translate-x-1/2 rounded-[50%] bg-[radial-gradient(circle,rgba(255,182,77,0.24),rgba(255,182,77,0.08)_42%,transparent_72%)] blur-2xl" />
+              <div className="absolute bottom-[3.25rem] left-1/2 h-[20%] w-[98%] max-w-sm -translate-x-1/2 rounded-[50%] bg-[radial-gradient(ellipse_at_center,rgba(9,9,10,0.34),rgba(9,9,10,0.14)_46%,transparent_76%)] blur-xl" />
 
-            <a
-              href="https://www.launchmynft.io/collections/CmTidAhU1QEutyZPFWcqwBQ44ScJhNAGH2J9hm5zonP6/aW6JZwq0ZErg7BGlXbKe"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-7 inline-flex min-h-9 items-center justify-center rounded-2xl border border-amber-200/28 bg-[linear-gradient(180deg,rgba(109,58,27,0.74),rgba(61,31,14,0.92))] px-5 text-[12px] font-semibold uppercase tracking-[0.14em] text-[#f8dfb6] shadow-[0_12px_24px_rgba(0,0,0,0.36)] transition-transform duration-300 hover:-translate-y-0.5 [font-family:Georgia,'Times_New_Roman',serif]"
-            >
-              Mint your PP
-            </a>
+              <a
+                href="https://www.launchmynft.io/collections/CmTidAhU1QEutyZPFWcqwBQ44ScJhNAGH2J9hm5zonP6/aW6JZwq0ZErg7BGlXbKe"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute bottom-[0.25rem] left-1/2 z-30 inline-flex min-h-9 -translate-x-1/2 items-center justify-center rounded-2xl border border-amber-200/28 bg-[linear-gradient(180deg,rgba(109,58,27,0.74),rgba(61,31,14,0.92))] px-5 text-[12px] font-semibold uppercase tracking-[0.14em] text-[#f8dfb6] shadow-[0_12px_24px_rgba(0,0,0,0.36)] transition-transform duration-300 hover:-translate-y-0.5 [font-family:Georgia,'Times_New_Roman',serif]"
+              >
+                Mint your PP
+              </a>
+            </div>
 
             <div
               id="welcome"
-              className="mx-auto mt-8 flex w-full max-w-sm flex-col items-center gap-4 border-t border-amber-100/14 pt-5 text-center"
+              className="mx-auto mt-4 flex w-full max-w-sm flex-col items-center gap-4 border-t border-amber-100/14 pt-5 text-center"
             >
               <p className="max-w-sm text-sm leading-7 text-white/58">
                 The forest keeps the stage dim, the props keep it alive, and the
